@@ -1,0 +1,85 @@
+Wordpress lokal auf dem Rechner installieren.
+
+1. Xamp installieren 
+2. In Xamp Apache Server starten
+3. In Xamp MySQL starten
+
+4. In den Ordner gehen => xamp/htdocs/  und da einen Ordner anlegen z.b. wordpressTestEins
+5. Die aktuelle Wordpress Version aus dem Internet runterladen
+6. In den neuen angelegten Ordner wordpressTestEins die heruntergeladene ZIP Datei von Wordpress extrahieren
+7. In der URL localhost:81/wordpressTestEins/wordpress   eingeben
+	localhost 404 Fehlermeldung.
+	Falls die Fehlermeldung kommt, kann man unter xamp => Apache => konfig => httpd.config => Listen 81
+	Den Port sehen, den sollte man dann auch nehmen z.b. http://localhost:81/wordpress/testeins/wordpress
+	Wenn unter Listen 80 steht dann natürlich http://localhost:80/wordpress/testeins/wordpress
+	
+8. Jetzt starten ein Fenster, in diesem Fenster werden DatenbankName, BenutzerName, Passwort, DatenbankHost und der Tabellen-Präfix abgefragt.
+
+	Da wir noch keine Datenbank erstellt haben, machen wir das noch.
+
+9. Datenbank erstellen:
+	- wir geben die die URL ein http://localhost:81/phpmyadmin
+	- dann sehen wir die phpmyadmin Oberfläche
+	- jetzt klicken wir links auf den Button Neu, um eine neue Datenbank zu erstellen
+	- wir geben rechts unseren DatenbankNamen ein und unter Kollation wählen wir utf8_bin aus.
+	- unter phpmyadmin klicken wir oben auf Rechte
+	- dann klicken wir unten auf Benutzerkonto anlegen
+	- BenutzerNamen für diese Datenbank eingeben
+	- Hostname localhost auswhählen
+	- Passwort eingeben & wiederholen
+	- häcken in gewähre alle Rechte auf die Datenbank ...
+	- keine globalen Rechte vergeben! Sonst hat der USER Zugang zum globalen Datenbank Server
+	- und unten dann auf OK klicken
+
+	
+10. jetzt gehen wir wieder auf die Adresse http://localhost:80/wordpress/testeins/wordpress
+	hier befinden sich das Fenster mit den Abfragen. 
+	- Wir geben ein =>DatenbankNamen, BenutzerName, Passwort
+	- localhost bleibt gleich, da die Datenbank sich auf den localen Server befindet
+	- der Tabellen-Präfix bleibt auch gleich
+
+11. Den Titel der Webseite eingeben. Einen neuen BenutzerNamen eingeben für den Wordpress Admin Zugang. 
+	Ein Passwort für das Wordpress Admin eingeben + EmailAdresse. 
+	Dann auf Wordpress installieren klicken.
+	Nach der Installation können wir uns mit unseren BenutzerName + Passwort einlogen
+	
+12. Wenn wir jetzt die URL aktualisieren unter der wir die Oberfläche von phpmyadmin sehen. 
+	Können wir in der von uns neu angelegten Datenbank alle Tabellen sehen, welche durch die Installation von Wordpress erstellt wurden.
+	
+	
+Tipps zum Nachschauen: 
+
+In dem Verzeichniss z.b. Xamp/htdocs/wordpress/testeins/wordpress   , in dieser wo alle Wordpress Dateien installiert wurden.
+Kann man unter wp-config.php   Informationen zu => DatenbankName, DatenbankBenutzerName, DatenbankPasswort, Hostname einsehen.
+
+
+Permalinks: 
+wenn man seiten url Bezeichnungen nach dem Titel Namen der Seite erstellen möchte, kann man das in Wordpress unter 
+Einstellungen => Permalinks => Beitragsname   auswhählen
+
+Wenn man für eine Startseite eine statische Seite haben möchte also Startseite, dann kann man das in Wordpress unter 
+Einstellungen => Lesen => eine statische Seite =>  Homepage  und da die Seite auswhählen
+
+OnePager in Avada erstellen:
+1. Unter Seiten in Wordpress eine neue Seite erstellen den Content für die erste Seite fertig stellen und dann innerhalb der 
+   Seite einen neuen Container erstellen und natürlich einen neuen Column und in diesem dann das Element Menu Anchor auswhählen
+
+2. Dann einen Namen eingeben, dieser wird dann später als ID im Menue verknuepft später
+
+4. Dann den Content der zweitenSeite welche unter diesem Menä Anchor kommen soll natürlich rein stellen.
+
+5. Dann Links in Wordpress auf Design => Menüs und da
+
+	Ein neues Menü erstellen z.b. OnePage, wichtig wenn dieser ganz oben stehen soll, dann muß ein häckchen rein unten bei Main Navigation.
+	Dann die Startseite hinzufuegen, in dem man auf Seiten geht und da die jeweilige Seite auswählt.
+	
+   Auf individuelle Links klicken,
+   da den ID Namen in die URL eingeben z.b. #zweiteSeite  also mit Route davor ( Neudeutsch hashtag )!
+   Dann natuerlich auch den Linktext reinschreiben z.b. Zweite Seite ( dieser erscheint dann im Menu oben auf der Webseite )
+   Dann auf Zum Menü hinzufügen klicken.
+   
+
+
+
+	
+
