@@ -79,7 +79,43 @@ OnePager in Avada erstellen:
    Dann auf Zum Menü hinzufügen klicken.
    
 
+Contact 7 plugin Nutzen: 
 
+1. contact 7 installieren & aktivieren in Wordpress
+2. Dann links in Wordpress auf Formulare klicken
+3. Dann auf Kontaktformular bearbeiten
+4. Dann den ShortCode kopieren der sieht meisten so aus => [contact-form-7 id="33" title="Kontaktformular 1"]
+5. Und dann in eine Seite als Code Element einfügen in Avada 
+6. Das Fomular mit CSS anpassen: 
+	- Links auf Avada Theme => Theme Options => und da den CSS Code anpassen z.b. 
+		.wpcf7 {
+				background-color: green;
+			}
+			
+	- oder auf die jeweilige Seite öffnen, dann oben den Button cusomizer klicken
+	  und dann unter zusätzlichs CSS, das Formulare in Echtzeit anpassen. Ist besser !
+	  
+		- Falls ich ein neues Element eingefuegt habe z.b. ein text
+		  dann kann ich diesem Element eine Klasse geben um dieses Feld speziel in CSS zu bearbeiten
+		  z.b.
+			.wpcf7 .neuerFormularText {
+	
+				background-color: rgba(255, 184, 113, 0.2);
+				color: green;
+			}
+			
+		In Contact Form 7 würde das Element so aussehen z.b.
+		<label class="neuerFormularTitel"> Deine zweite Nachricht
+		[textarea text-462 class:neuerFormularText]
+		</label>
+		
+		
+		
+		- Um die Überschrift einen Feldes zu bearbeiten kann ich in dem tag <label> natürlich noch eine Klasse einfügen
+		  um diese Element dann mit css zu bearbeiten, wie im hier zu sehen:
+			.neuerFormularTitel {
+				color: green;
+			}	
 
 	
 
